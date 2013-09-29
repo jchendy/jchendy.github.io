@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Tile cost calculator</title>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+        <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+        <script>
+
+            $(document).ready(function() {
+                var errorText = "Enter positive numbers in all fields";
+
+                $("#result").text(errorText);
+
+                function isValid(l, w, c) {
+                    //Number("") == 0, we don't want that
+                    if($("#cost").val() == "") {
+                        return false;
+                    }                    
+                    if(isNaN(l) || isNaN(w) || isNaN(c)) {
+                        return false;
+                    }
+                    if(l <= 0 || w <= 0 || c < 0) {
+                        return false;
+                    }
+                    return true;
+                }
+
+                $("input").keyup(function() {
+                    var length = Number($("#length").val());
+                    var width = Number($("#width").val());
+                    var cost = Number($("#cost").val());
+
+                    if(isValid(length, width, cost)) {
+                        $("#result").text("Cost: $" + length * width * cost);  
+                    } else {
+                        $("#result").text(errorText);                        
+                    }
+
+                });
+            });
+
+        </script>
+
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <![endif]-->
+    </head>
+
+    <body>
+
+        <h1>Tile cost calculator</h1>
+
+        <form>
+            <fieldset>
+                <label>Floor length:</label>
+                <input type="text" id="length">
+                <label>Floor width:</label>
+                <input type="text" id="width">
+                <label>Cost per square foot ($):</label>
+                <input type="text" id="cost">
+            </fieldset>
+        </form>
+
+        <span id="result"></span>
+
+    </body>
+</html>

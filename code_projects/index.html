@@ -1,0 +1,107 @@
+---
+layout: default
+---
+
+<script src="js/calculator.js"></script>
+<script src="js/primeFactors.js"></script>
+<script src="js/timer.js"></script>
+
+<script>
+    $(document).ready(function() {
+        initCalculator();
+        initPrimeFactors();
+        initTimer();
+    });
+</script>
+
+
+<div class="container-fluid">
+    <div class="row-fluid ">
+        <div class="span2">
+            <div class="block">
+                <div class="top">
+                    <h1>Calculator</h1>
+                </div>
+                <div class="main">
+                    <form>
+                        <fieldset>
+
+                            <input type="text" class="input-medium" placeholder="Number" id="number1" value="1">
+
+                            <br />
+
+                            <label class="radio inline">
+                                <input type="radio" name="operation" id="#add" value="add" checked>
+                                +
+                            </label>
+                            <label class="radio inline">
+                                <input type="radio" name="operation" id="subtract" value="subtract">
+                                -
+                            </label>
+                            <label class="radio inline">
+                                <input type="radio" name="operation" id="multiply" value="multiply">
+                                *
+                            </label>
+                            <label class="radio inline">
+                                <input type="radio" name="operation" id="divide" value="divide">
+                                /
+                            </label>             
+
+                            <br /><br />
+
+                            <input type="text" class="input-medium" placeholder="Number" id="number2" value="2">
+
+                        </fieldset>
+                    </form>
+
+                    = <span id="calculator-result"></span>                    
+                </div>
+
+            </div>
+        </div>
+
+        <div class="span2">
+            <div class="block">
+                <div class="top">
+                    <h1>Prime factors</h1>
+                </div>
+                <div class="main">
+                    <form>
+                        <fieldset>
+                            <label>What number do you want to factor?</label>
+                            <input type="text" class="input-medium" placeholder="Number" id="prime-factor-input" value="27">
+                        </fieldset>
+                    </form>
+
+                    <span id="prime-factor-result"></span>                    
+
+                </div>
+            </div>  
+        </div>
+
+
+        <div class="span2">
+            <div class="block">
+                <div class="top">
+                    <h1>Timer</h1>
+                </div>
+                <div class="main">
+                    <form>
+                        <fieldset>
+                            <label>Countdown time (mm:ss):</label>
+                            <input type="text" class="input-medium" placeholder="mm:ss" value="00:05" id="time">
+
+                            <br />
+                            <input type="button" class="btn" id="timer-button" value="Go!">
+
+                        </fieldset>
+                    </form>
+
+                    <span id="timer-result"></span>                    
+
+                </div>
+            </div>  
+        </div>
+
+    </div>
+</div>
