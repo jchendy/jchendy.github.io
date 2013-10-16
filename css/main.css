@@ -41,7 +41,7 @@ body {
     font-size: 125%;
 }
 
-.block ul{
+.nolist ul{
     list-style-type: none;
     padding: 0;
     margin-left: 0;
