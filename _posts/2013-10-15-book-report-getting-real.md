@@ -19,7 +19,7 @@ My key takeaways:
 
 And some repeats of the usual advice:
 
-- The best way to have use empathy is to build products you'll use yourself
+- The best way to have user empathy is to build products you'll use yourself
 - Have a clear and well-communicated vision
-- Sketches and prototypes are much better than specs
+- Sketches and prototypes are better than specs
 - Start every feature as an MVP
