@@ -10,6 +10,31 @@ body {
     min-height: 22px;
 }
 
+.block-blog-post {
+    background-color: #FFFFFF;
+    margin: 10px;
+    text-align: justify;
+    padding-bottom: 9px;
+
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: 2px 2px 9px rgba(0,0,0,0.3);
+    -moz-box-shadow: 2px 2px 9px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 9px rgba(0,0,0,0.3);       
+}
+
+.block-blog-post .top {
+    background: #2F2E35;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.block-blog-post .main {
+    padding: 0px 10px 0px 10px;
+}
+
 .block {
     background-color: #FFFFFF;
     margin: 10px;

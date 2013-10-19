@@ -46,7 +46,8 @@
                 
                 //highlight the proper nav item based on current URL
                 $('.nav li').removeClass('active');
-                $('.nav a[href="{{page.url}}"]').parent('li').addClass('active');
+                $('#{{page.section}}-header').addClass('active');
+                //$('.nav a[href="/{{page.section}}.html"]').parent('li').addClass('active');
             })
         </script>
 
@@ -67,8 +68,10 @@
         <div class="navbar-inner">
             <div class="container-fluid">
                 <ul class="nav">
-                    <li class="active"><a href="/index.html">jchendy</a></li>
-                    <li><a href="/about.html">about</a></li>
+                    <li id="jchendy-header"><a href="/index.html">jchendy</a></li>
+                    <li id="blog-header"><a href="{{site.posts[0].url}}">blog</a></li>
+                    <li id="about-header"><a href="/about.html">about</a></li>                  
+                    
                 </ul>
             </div>
         </div>
