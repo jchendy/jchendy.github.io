@@ -33,7 +33,7 @@ Yup.
 
 Absolutely. This is what we've seen with our internal consulting. The clients think they want UI designs, but what they actually need is somebody to make sure they're focused on user and business needs throughout their whole development process.
 
->There are two things UX practitioners in wireframe factories can do to improve the situation for everybody:
+>UX practitioners in wireframe factories have two options to improve the situation for everybody:
 >
 >1: Get a real UX job
 >
@@ -51,7 +51,7 @@ People who are able to really understand what users need can clearly deliver mor
 
 Lis's presentation can be modified just slightly to communicate this message:
 
->There are two things UX practitioners in wireframe factories can do to improve the situation for everybody:
+>UX practitioners in wireframe factories have two options to improve the situation for everybody:
 >
 >1: Get a real UX job, call yourself a PM
 >
