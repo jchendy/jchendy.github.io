@@ -5,7 +5,7 @@ title: UX is dying, long live product management
 
 It's time for UX to end. Seriously. 
 
-Practicing UX was my dream for over seven years. I spent the first two years of my career convincing my company to start a UX team, which happened this summer. I believe that user-centered design thinking and the people who understand it are uniquely positioned to bring us amazing products and services beyond what we can imagine right now. But in order for that happen, UX has to die.
+Practicing UX was my dream for over seven years. After finishing my HCI studies, I spent the first two years of my career convincing my company to start a UX team, which happened this summer. I believe that user-centered design thinking and the people who understand it are uniquely positioned to bring us amazing products and services beyond what we can imagine right now. But in order for that happen, UX has to die.
 
 I just came from a talk presented by [Lis Hubert](http://www.elisabethhubert.com/) called "The future of UX: killing the wireframe machine", which was presented at the [New York chapter](http://www.ixda.org/local/new-york-ixda) of the [Interaction Design Association](http://www.ixda.org/). This isn't what she set out to do, but Lis convinced me that it's time for the end of UX.
 
