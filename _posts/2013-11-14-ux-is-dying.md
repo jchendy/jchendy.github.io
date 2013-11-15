@@ -29,9 +29,9 @@ Mmm hmm. This is consistent with my experience doing internal UX consulting at w
 
 Yup.
 
->What we should be doing is "Marrying business needs, user needs, technological capabilities in order to facilitate a human-centered relationship between a customer and one's company"
+>What we should be doing is "Marrying business needs, user needs, technological capabilities in order to facilitate a human-centered relationship between a customer and one's company" (quote from [an earlier version](http://www.slideshare.net/lishubert/the-future-of-ux-killing-the-wireframe-machine) of the talk)
 
-Absolutely. (quote from [an earlier version](http://www.slideshare.net/lishubert/the-future-of-ux-killing-the-wireframe-machine) of the talk)
+Absolutely. This is what we've seen with our internal consulting. The clients think they want UI designs, but what they actually need is somebody to make sure they're focused on user and business needs throughout their whole development process.
 
 >There are two things UX practitioners in wireframe factories can do to improve the situation for everybody:
 >
