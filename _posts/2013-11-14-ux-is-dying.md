@@ -51,7 +51,7 @@ People who are able to really understand what users need can clearly deliver mor
 
 Lis's presentation can be modified just slightly to communicate this message:
 
->UX practitioners in wireframe factories have two options to improve the situation for everybody:
+>UX practitioners in wireframe factories have two options to improve the situation for everybody: 
 >
 >1: Get a real UX job, call yourself a PM
 >
