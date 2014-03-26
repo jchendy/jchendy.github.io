@@ -33,14 +33,19 @@
                 });
             }
 
-            //Keep all blocks in a row the same height. Code from: http://stackoverflow.com/questions/9143971/using-twitter-bootstrap-2-0-how-to-make-equal-column-heights
+            //Keep all blocks in a row the same height. Modified code from: http://stackoverflow.com/questions/9143971/using-twitter-bootstrap-2-0-how-to-make-equal-column-heights
             function alignBoxes() {
                 $('.block').height('auto');
                 $('.block').height(function () {
-                    var h = _.max($(this).closest('.row').find('.block'), function (elem, index, list) {
-                        return $(elem).height();
+                    
+                    var height = 0; 
+                    _.each($(this).closest('.row').find('.block'), function (e) {
+                        if($(e).height() > height) {
+                            height = $(e).height();
+                        }
                     });
-                    return $(h).height();   
+                    
+                    return height;   
                 });     
             }   
             
@@ -48,8 +53,6 @@
                 //highlight the proper nav item based on current URL
                 $('.nav li').removeClass('active');
                 $('#{{page.section}}-header').addClass('active');
-                console.log('SECTION ' + '#{{page.section}}-header');
-
                 fixHeights();
                 
             })
