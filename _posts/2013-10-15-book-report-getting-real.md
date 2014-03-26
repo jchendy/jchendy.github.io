@@ -7,7 +7,7 @@ Title\: Getting Real\: The Smarter, Faster, Easier Way to Build a Successful Web
 
 Authors\: Jason Fried, Heinemeier David Hansson, Matthew Linderman
 
-<img src='/img/getting-real.jpg'>
+<img class='img-responsive' src='/img/getting-real.jpg'>
 
 I found this book to be excellent. It's a collection of many clear and concise pieces of advice for managing the product lifecycle. All of the lessons tie back to the key theme: less. From the introduction: "less means: less features, less options/preferences, less people and corporate structure, less meetings and abstractions, less promises"
 
