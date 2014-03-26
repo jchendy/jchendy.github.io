@@ -4,7 +4,7 @@ section: jchendy
 ---
 <div class="container-fluid">
     <div class="row ">
-        
+
         <div class="col-sm-2">
             <div class="block nolist">
                 <div class="top">
@@ -20,16 +20,16 @@ section: jchendy
                     <h1>Posts</h1>
                 </div>
                 <div class="main post-list">
-                    
+
                     {% for post in site.posts %}
                     <div class="post-div"><a style="float: left;" href="{{ post.url | remove_first:'/'}}">{{ post.title }}</a> <span class="post-date" style="float: right;">{{ post.date | date_to_string }}</span></div>
-                    
+
                     {% endfor %}
-                    
+
                 </div>
             </div>	
         </div>
-        
+
         <div class="col-sm-4">
             <div class="block nolist">
                 <div class="top">
