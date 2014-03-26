@@ -1,20 +1,35 @@
 body {
     background-color: #EEDDFF;
+    padding-top: 50px;
 }
 
-.navbar .nav>li>a{
-    padding: 1px 15px 1px 0px;
+.navbar {
+    background-color: #333;
+    color: #fff;
 }
 
-.navbar-inner{
-    min-height: 22px;
+.navbar-nav>li>a {
+    color: #555;
 }
+
+.nav>li>a:hover, .nav>li>a:focus {
+    text-decoration: none;
+    background-color: #333;
+    color: #fff;
+}
+
+.navbar-nav>.active>a {
+    color: #fff;
+    background-color: #333;
+}
+
 
 .block-blog-post {
     background-color: #FFFFFF;
     margin: 10px;
     text-align: justify;
     padding-bottom: 9px;
+    font-size: 125%;
 
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -24,12 +39,7 @@ body {
     box-shadow: 2px 2px 9px rgba(0,0,0,0.3);       
 }
 
-.block-blog-post .top {
-    background: #2F2E35;
-    -webkit-border-radius: 10px 10px 0 0;
-    -moz-border-radius: 10px 10px 0 0;
-    border-radius: 10px 10px 0 0;
-}
+
 
 .block-blog-post .main {
     padding: 0px 10px 0px 10px;
@@ -49,21 +59,21 @@ body {
     box-shadow: 2px 2px 9px rgba(0,0,0,0.3);   
 }
 
-.block .top {
-    background: #2F2E35;
-    -webkit-border-radius: 10px 10px 0 0;
-    -moz-border-radius: 10px 10px 0 0;
-    border-radius: 10px 10px 0 0;
-}
 
 .block .main {
     padding: 0px 10px 0px 10px;
 }
 
 .top h1 {
-    color: #fff;
     text-align: center;
-    font-size: 125%;
+    font-size: 150%;
+    padding-top: 5px;
+}
+
+.block-blog-post .top h1 {
+    text-align: center;
+    font-size: 200%;
+    padding-top: 5px;
 }
 
 .nolist ul{

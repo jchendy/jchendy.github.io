@@ -13,9 +13,10 @@
 
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore.js"></script>
-
-        <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
-        <script src="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>    
+        
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>    
+        
         <link href="/css/main.css" rel="stylesheet">
 
         <script>
@@ -34,7 +35,7 @@
             function alignBoxes() {
                 $('.block').height('auto');
                 $('.block').height(function () {
-                    var h = _.max($(this).closest('.row-fluid').find('.block'), function (elem, index, list) {
+                    var h = _.max($(this).closest('.row').find('.block'), function (elem, index, list) {
                         return $(elem).height();
                     });
                     return $(h).height();   
@@ -42,12 +43,13 @@
             }   
             
             $( document ).ready(function() {
-                fixHeights();
-                
                 //highlight the proper nav item based on current URL
                 $('.nav li').removeClass('active');
                 $('#{{page.section}}-header').addClass('active');
-                //$('.nav a[href="/{{page.section}}.html"]').parent('li').addClass('active');
+                console.log('SECTION ' + '#{{page.section}}-header');
+
+                fixHeights();
+                
             })
         </script>
 
@@ -63,6 +65,22 @@
         </script>
 
     </head>
+    
+    
+<nav class="navbar navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+   
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+            <li id="jchendy-header"><a href="/index.html">jchendy</a></li>
+            <li id="blog-header"><a href="{{site.posts[0].url}}">blog</a></li>
+            <li id="about-header"><a href="/about.html">contact/CV</a></li> 
+      </ul>
+    </div>
+  </div>
+</nav>
+    
+    <!--
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
@@ -76,6 +94,8 @@
             </div>
         </div>
     </div>
+    
+    -->
 
     {{content}}
 
