@@ -1,0 +1,60 @@
+{
+    "beaker": "2",
+    "evaluators": [
+        {
+            "name": "Html",
+            "plugin": "Html",
+            "shellID": null
+        },
+        {
+            "name": "Latex",
+            "plugin": "Latex",
+            "shellID": null
+        },
+        {
+            "name": "IPython",
+            "plugin": "IPython",
+            "shellID": "07D145360E5B45AF8661DE1CBF918ED9",
+            "imports": "",
+            "supplementalClassPath": ""
+        },
+        {
+            "name": "JavaScript",
+            "plugin": "JavaScript",
+            "shellID": null,
+            "jsSetting2": "",
+            "jsSetting1": ""
+        },
+        {
+            "name": "R",
+            "plugin": "R",
+            "shellID": "81c46d40-13c8-4a63-ba41-bdfae0700020"
+        }
+    ],
+    "cells": [
+        {
+            "id": "section001",
+            "type": "section",
+            "level": 1,
+            "title": "d3 word cloud",
+            "collapsed": false
+        },
+        {
+            "id": "code001",
+            "type": "code",
+            "evaluator": "Html",
+            "input": {
+                "body": "<div id=\"cloud\"></div>\n\n\n<script src=\"https://raw.githubusercontent.com/jasondavies/d3-cloud/master/d3.layout.cloud.js\"></script>\n<script>\n  var fill = d3.scale.category20();\n\n  d3.layout.cloud().size([300, 300])\n      .words([\n        \"Hello\", \"world\", \"normally\", \"you\", \"want\", \"more\", \"words\",\n        \"than\", \"this\"].map(function(d) {\n        return {text: d, size: 10 + Math.random() * 90};\n      }))\n      .padding(5)\n      .rotate(function() { return ~~(Math.random() * 2) * 90; })\n      .font(\"Impact\")\n      .fontSize(function(d) { return d.size; })\n      .on(\"end\", draw)\n      .start();\n\n  function draw(words) {\n    d3.select(\"#cloud\").append(\"svg\")\n        .attr(\"width\", 300)\n        .attr(\"height\", 300)\n      .append(\"g\")\n        .attr(\"transform\", \"translate(150,150)\")\n      .selectAll(\"text\")\n        .data(words)\n      .enter().append(\"text\")\n        .style(\"font-size\", function(d) { return d.size + \"px\"; })\n        .style(\"font-family\", \"Impact\")\n        .style(\"fill\", function(d, i) { return fill(i); })\n        .attr(\"text-anchor\", \"middle\")\n        .attr(\"transform\", function(d) {\n          return \"translate(\" + [d.x, d.y] + \")rotate(\" + d.rotate + \")\";\n        })\n        .text(function(d) { return d.text; });\n  }\n</script>"
+            },
+            "output": {
+                "selectedType": "BeakerDisplay",
+                "result": {
+                    "type": "BeakerDisplay",
+                    "innertype": "Html",
+                    "object": "<div id=\"cloud\"></div>\n\n\n<script src=\"https://raw.githubusercontent.com/jasondavies/d3-cloud/master/d3.layout.cloud.js\"></script>\n<script>\n  var fill = d3.scale.category20();\n\n  d3.layout.cloud().size([300, 300])\n      .words([\n        \"Hello\", \"world\", \"normally\", \"you\", \"want\", \"more\", \"words\",\n        \"than\", \"this\"].map(function(d) {\n        return {text: d, size: 10 + Math.random() * 90};\n      }))\n      .padding(5)\n      .rotate(function() { return ~~(Math.random() * 2) * 90; })\n      .font(\"Impact\")\n      .fontSize(function(d) { return d.size; })\n      .on(\"end\", draw)\n      .start();\n\n  function draw(words) {\n    d3.select(\"#cloud\").append(\"svg\")\n        .attr(\"width\", 300)\n        .attr(\"height\", 300)\n      .append(\"g\")\n        .attr(\"transform\", \"translate(150,150)\")\n      .selectAll(\"text\")\n        .data(words)\n      .enter().append(\"text\")\n        .style(\"font-size\", function(d) { return d.size + \"px\"; })\n        .style(\"font-family\", \"Impact\")\n        .style(\"fill\", function(d, i) { return fill(i); })\n        .attr(\"text-anchor\", \"middle\")\n        .attr(\"transform\", function(d) {\n          return \"translate(\" + [d.x, d.y] + \")rotate(\" + d.rotate + \")\";\n        })\n        .text(function(d) { return d.text; });\n  }\n</script>"
+                },
+                "elapsedTime": 33
+            }
+        }
+    ]
+}
