@@ -14,7 +14,7 @@
         {
             "name": "IPython",
             "plugin": "IPython",
-            "shellID": "2D0A34F9D2FA44D98EA9E40E48F96969",
+            "shellID": "B902048F229642E58BEF14FB2C890F74",
             "imports": "",
             "supplementalClassPath": ""
         },
@@ -28,7 +28,7 @@
         {
             "name": "R",
             "plugin": "R",
-            "shellID": "6c618f9b-c089-4acd-9b2a-cb8da3ae1d3d"
+            "shellID": "00adb6eb-4ba6-47d6-865d-621aa8c56e6f"
         }
     ],
     "cells": [
@@ -36,7 +36,7 @@
             "id": "section001",
             "type": "section",
             "level": 1,
-            "title": "d3 word cloud",
+            "title": "/r/datascience word cloud using Python and D3",
             "collapsed": false
         },
         {
@@ -44,170 +44,13 @@
             "type": "code",
             "evaluator": "IPython",
             "input": {
-                "body": "import pandas as pd\nreddit = pd.read_json(\"http://www.reddit.com/r/datascience.json\")"
+                "body": "#Grab the most recent posts to http://www.reddit.com/r/datascience and count the occurences of each word in the titles\n\nimport pandas as pd\nfrom collections import Counter\n\nreddit = pd.read_json(\"http://www.reddit.com/r/datascience.json\")\nposts = pd.DataFrame([x['data'] for x in reddit['data']['children']])\n\nwords = []\nfor x in posts['title']:\n  words += x.lower().split()\n\nc = Counter(words)\ns = pd.Series(c)\ncounts = pd.DataFrame(s)"
             },
             "output": {
                 "selectedType": "Hidden",
                 "result": "",
                 "outputArrived": false,
-                "elapsedTime": 1030
-            }
-        },
-        {
-            "id": "codeaIy9lN",
-            "type": "code",
-            "evaluator": "IPython",
-            "input": {
-                "body": "reddit['kind'][0] = 'asdf'"
-            },
-            "output": {
-                "selectedType": "Hidden",
-                "result": "",
-                "outputArrived": false,
-                "elapsedTime": 61
-            }
-        },
-        {
-            "id": "codenFjsYj",
-            "type": "code",
-            "evaluator": "IPython",
-            "input": {
-                "body": "reddit"
-            },
-            "output": {
-                "selectedType": "Table",
-                "result": {
-                    "type": "TableDisplay",
-                    "tableDisplayModel": {
-                        "columnNames": [
-                            "",
-                            "data",
-                            "kind"
-                        ],
-                        "values": [
-                            [
-                                "after",
-                                "                                         t3_22ul62",
-                                "    asdf"
-                            ],
-                            [
-                                "before",
-                                "                                              None",
-                                " Listing"
-                            ],
-                            [
-                                "children",
-                                " [{u'kind': u't3', u'data': {u'domain': u'self....",
-                                " Listing"
-                            ],
-                            [
-                                "modhash",
-                                "                                                  ",
-                                " Listing"
-                            ]
-                        ]
-                    },
-                    "columnNames": [
-                        "",
-                        "data",
-                        "kind"
-                    ],
-                    "values": [
-                        [
-                            "after",
-                            "                                         t3_22ul62",
-                            "    asdf"
-                        ],
-                        [
-                            "before",
-                            "                                              None",
-                            " Listing"
-                        ],
-                        [
-                            "children",
-                            " [{u'kind': u't3', u'data': {u'domain': u'self....",
-                            " Listing"
-                        ],
-                        [
-                            "modhash",
-                            "                                                  ",
-                            " Listing"
-                        ]
-                    ]
-                },
-                "outputArrived": true,
-                "elapsedTime": 245
-            }
-        },
-        {
-            "id": "coderurDFz",
-            "type": "code",
-            "evaluator": "IPython",
-            "input": {
-                "body": "newdf = pd.DataFrame(columns=['word', 'count'])\nnewdf"
-            },
-            "output": {
-                "selectedType": "BeakerDisplay",
-                "result": {
-                    "type": "BeakerDisplay",
-                    "innertype": "Html",
-                    "object": "<div class=\"out_prompt_overlay prompt\" title=\"click to expand output; double click to hide output\" style=\"display: none;\"></div><div class=\"output vbox\" style=\"display: none;\"></div><div class=\"btn output_collapsed\" title=\"click to expand output\" style=\"display: none;\">. . .</div><div class=\"output_subarea output_html rendered_html\"><div style=\"max-height:1000px;max-width:1500px;overflow:auto;\">\n<table border=\"1\" class=\"dataframe\">\n  <tbody>\n    <tr>\n      <td>Index([], dtype='object')</td>\n      <td>Empty DataFrame</td>\n    </tr>\n  </tbody>\n</table>\n<p>0 rows × 2 columns</p>\n</div></div>"
-                },
-                "outputArrived": true,
-                "elapsedTime": 69
-            }
-        },
-        {
-            "id": "codeFBolIW",
-            "type": "code",
-            "evaluator": "IPython",
-            "input": {
-                "body": "newdf['word'][0] = 'fda'\nnewdf"
-            },
-            "output": {
-                "selectedType": "BeakerDisplay",
-                "result": {
-                    "type": "BeakerDisplay",
-                    "innertype": "Error",
-                    "object": [
-                        "index 0 is out of bounds for axis 0 with size 0",
-                        "index 0 is out of bounds for axis 0 with size 0<br><span  class=\"ansired\">---------------------------------------------------------------------------</span>\n<span  class=\"ansired\">IndexError</span>                                Traceback (most recent call last)<br><span  class=\"ansigreen\">&lt;ipython-input-1-4339fccba379&gt;</span> in <span  class=\"ansicyan\">&lt;module&gt;<span  class=\"ansiblue\">()</span>\n<span  class=\"ansigreen\">----&gt; 1<span  class=\"ansired\"> </span>newdf</span><span  class=\"ansiblue\">[</span><span  class=\"ansiblue\">&apos;word&apos;</span><span  class=\"ansiblue\">]</span><span  class=\"ansiblue\">[</span><span  class=\"ansicyan\">0</span><span  class=\"ansiblue\">]</span> <span  class=\"ansiblue\">=</span> <span  class=\"ansiblue\">&apos;fda&apos;</span><span  class=\"ansiblue\"></span></span>\n</span><span  class=\"ansigreen\">      2</span> </span>newdf</span><span  class=\"ansiblue\"></span></span>\n<br><span  class=\"ansigreen\">/Users/jeff/anaconda/lib/python2.7/site-packages/pandas/core/series.pyc</span> in <span  class=\"ansicyan\">__setitem__<span  class=\"ansiblue\">(self, key, value)</span>\n<span  class=\"ansigreen\">    600</span>                     and not self.index.inferred_type == &apos;integer&apos;):\n<span  class=\"ansigreen\">    601</span> <span  class=\"ansiblue\"></span></span>\n<span  class=\"ansigreen\">--&gt; 602<span  class=\"ansired\">                 </span>values</span><span  class=\"ansiblue\">[</span></span>key</span><span  class=\"ansiblue\">]</span> <span  class=\"ansiblue\">=</span> </span>value</span><span  class=\"ansiblue\"></span></span>\n</span><span  class=\"ansigreen\">    603</span>                 <span  class=\"ansigreen\">return</span><span  class=\"ansiblue\"></span></span>\n<span  class=\"ansigreen\">    604</span>             <span  class=\"ansigreen\">elif</span> </span>key</span> <span  class=\"ansigreen\">is</span> </span>Ellipsis</span><span  class=\"ansiblue\">:</span><span  class=\"ansiblue\"></span></span>\n<br><span  class=\"ansired\">IndexError</span>: index 0 is out of bounds for axis 0 with size 0"
-                    ]
-                },
-                "outputArrived": true,
-                "elapsedTime": 110
-            }
-        },
-        {
-            "id": "codeE7UW38",
-            "type": "code",
-            "evaluator": "IPython",
-            "input": {
-                "body": "posts = pd.DataFrame([x['data'] for x in reddit['data']['children']])"
-            },
-            "output": {
-                "selectedType": "Hidden",
-                "result": "",
-                "outputArrived": false,
-                "elapsedTime": 41
-            }
-        },
-        {
-            "id": "codeakUjKK",
-            "type": "code",
-            "evaluator": "IPython",
-            "input": {
-                "body": "words = []\nfor x in posts['title']:\n  words += x.split()\nwords"
-            },
-            "output": {
-                "selectedType": "BeakerDisplay",
-                "result": {
-                    "type": "BeakerDisplay",
-                    "innertype": "Html",
-                    "object": "<div class=\"out_prompt_overlay prompt\" title=\"click to expand output; double click to hide output\" style=\"display: none;\"></div><div class=\"output vbox\" style=\"display: none;\"></div><div class=\"btn output_collapsed\" title=\"click to expand output\" style=\"display: none;\">. . .</div><div class=\"output_subarea output_text\"><pre>[u'Internship',\n u'Advice',\n u'SAS',\n u'Certifications',\n u'50k',\n u'tuition',\n u'for',\n u'a',\n u'ms',\n u'program,',\n u'will',\n u'i',\n u'be',\n u'able',\n u'to',\n u'pay',\n u'it',\n u'back?',\n u\"What's\",\n u'a',\n u'typical',\n u'day',\n u'at',\n u'work',\n u'like?',\n u'What',\n u'Every',\n u'Data',\n u'Scientist',\n u'Needs',\n u'to',\n u'Know',\n u'about',\n u'SQL',\n u'Great',\n u'data',\n u'science',\n u'resources',\n u'for',\n u'self-learners',\n u'Help',\n u'with',\n u'large',\n u'scale',\n u'JSON',\n u'formatted',\n u'API',\n u'replies',\n u'Let',\n u'me',\n u'analyze',\n u'your',\n u'data',\n u'for',\n u'a',\n u'class',\n u'project!',\n u'Opinions',\n u'on',\n u'a',\n u'Data',\n u'Science',\n u'program-',\n u'Ask',\n u'r/datascience',\n u'-',\n u'would',\n u'there',\n u'be',\n u'interest',\n u'in',\n u'a',\n u'DS',\n u'focused',\n u'tool',\n u'built',\n u'around',\n u'Visual',\n u'Studio',\n u'+',\n u'Python',\n u'+',\n u'Excel?',\n u'If',\n u'so',\n u'please',\n u'let',\n u'us',\n u'(microsoft)',\n u'know!',\n u'San',\n u'Francisco',\n u'neighborhood',\n u'recommender',\n u'-',\n u'Zipfian',\n u'personal',\n u'project',\n u'Data',\n u'Science',\n u'&amp;amp;',\n u'Online',\n u'Retail',\n u'-',\n u'At',\n u'Warby',\n u'Parker',\n u'and',\n u'Beyond:',\n u'Carl',\n u'Anderson',\n u'Interview',\n u'Google',\n u'Labs',\n u'-',\n u'Quantum',\n u'Machine',\n u'Learning',\n u'Data',\n u'Science',\n u'from',\n u'Applied',\n u'Mathematics',\n u'In',\n u'Defense',\n u'of',\n u'Coursera',\n u'Questions',\n u'about',\n u'learning',\n u'data',\n u'science?',\n u'Data',\n u'Science',\n u'Cookbook',\n u'Work',\n u'Experience',\n u'Positioning',\n u'Guide',\n u'to',\n u'Data',\n u'Analysis',\n u'Preparing',\n u'for',\n u'a',\n u'data',\n u'science',\n u'interview?',\n u'My',\n u'project:',\n u'correlate',\n u'your',\n u'data',\n u'with',\n u'open',\n u'data',\n u'Demonstrating',\n u'Mathimatical',\n u'Aptitude',\n u'for',\n u'MSc',\n u'Data',\n u'Science',\n u'Degree',\n u'Boosting',\n u'Algorithms',\n u'for',\n u'Better',\n u'Predictions',\n u'Why',\n u'am',\n u'I',\n u'not',\n u'getting',\n u'interview',\n u'for',\n u'Data',\n u'Science',\n u'positions?',\n u'How',\n u'to',\n u'formulate',\n u'a',\n u'(science)',\n u'problem',\n u'and',\n u'analyze',\n u'it',\n u'using',\n u'Python',\n u'code',\n u'(PyCon',\n u'2014',\n u'video)']</pre></div>"
-                },
-                "outputArrived": true,
-                "elapsedTime": 77
+                "elapsedTime": 1173
             }
         },
         {
@@ -215,27 +58,16 @@
             "type": "code",
             "evaluator": "Html",
             "input": {
-                "body": "<div id=\"cloud\"></div>\n\n\n<script src=\"https://raw.githubusercontent.com/jasondavies/d3-cloud/master/d3.layout.cloud.js\"></script>\n<script>\n  var fill = d3.scale.category20();\n\n  d3.layout.cloud().size([300, 300])\n  \t  .words([{text: 'a', size: 10}, {text: 'b', size: 100}])\n      .padding(5)\n      .rotate(function() { return ~~(Math.random() * 2) * 90; })\n      .font(\"Impact\")\n      .fontSize(function(d) { return d.size; })\n      .on(\"end\", draw)\n      .start();\n\n  function draw(words) {\n    d3.select(\"#cloud\").append(\"svg\")\n        .attr(\"width\", 300)\n        .attr(\"height\", 300)\n      .append(\"g\")\n        .attr(\"transform\", \"translate(150,150)\")\n      .selectAll(\"text\")\n        .data(words)\n      .enter().append(\"text\")\n        .style(\"font-size\", function(d) { return d.size + \"px\"; })\n        .style(\"font-family\", \"Impact\")\n        .style(\"fill\", function(d, i) { return fill(i); })\n        .attr(\"text-anchor\", \"middle\")\n        .attr(\"transform\", function(d) {\n          return \"translate(\" + [d.x, d.y] + \")rotate(\" + d.rotate + \")\";\n        })\n        .text(function(d) { return d.text; });\n  }\n</script>"
+                "body": "<!-- grab Jason Davies's word cloud layout -->\n<script src=\"https://raw.githubusercontent.com/jasondavies/d3-cloud/master/d3.layout.cloud.js\"></script>\n\n<div id=\"cloud\"></div>\n\n<script>\n  //create a dummy cell to get Python DataFrame into JavaScript\n  var cell = { evaluator: \"IPython\", input: { body: \"counts\" }, output: {} };\n\n  //Use the bkHelper API to evaluate the cell\n  bkHelper.evaluate(cell).then(function(){\n\n      //Grab the DF as a 2D JS array\n      var data = cell.output.result.values;\n    \n      //create a list of maps, as expected by the word cloud layout\n      var wc = [];\n      _.each(data, function(a){\n        wc.push({text: a[0], count: a[1]})\n      })\n\n    var fill = d3.scale.category20();\n    var fontSize = d3.scale.log().range([20, 100]);\n\n    var w = 800;\n    var h = 800;\n\n    d3.layout.cloud()\n        .size([w, h])\n        .words(wc)\n        .rotate(function(d) { return ~~(Math.random() * 5) * 30 - 60; })\n        .font(\"Impact\")\n        .fontSize(function(d) { return fontSize(+d.count); })\n        .on(\"end\", draw)\n        .start();\n\n    function draw(words) {\n      d3.select(\"#cloud\").append(\"svg\")\n          .attr(\"width\", w)\n          .attr(\"height\", h)\n        .append(\"g\")\n          .attr(\"transform\", \"translate(300,300)\")\n        .selectAll(\"text\")\n          .data(words)\n        .enter().append(\"text\")\n          .style(\"font-size\", function(d) { return d.size + \"px\"; })\n          .style(\"font-family\", \"Impact\")\n          .style(\"fill\", function(d, i) { return fill(i); })\n          .attr(\"text-anchor\", \"middle\")\n          .attr(\"transform\", function(d) {\n            return \"translate(\" + [d.x, d.y] + \")rotate(\" + d.rotate + \")\";\n          })\n          .text(function(d) { return d.text; });\n    }    \n  })  \n  \n  \n</script>"
             },
             "output": {
                 "selectedType": "BeakerDisplay",
                 "result": {
                     "type": "BeakerDisplay",
                     "innertype": "Html",
-                    "object": "<div id=\"cloud\"></div>\n\n\n<script src=\"https://raw.githubusercontent.com/jasondavies/d3-cloud/master/d3.layout.cloud.js\"></script>\n<script>\n  var fill = d3.scale.category20();\n\n  d3.layout.cloud().size([300, 300])\n  \t  .words([{text: 'a', size: 10}, {text: 'b', size: 100}])\n      .padding(5)\n      .rotate(function() { return ~~(Math.random() * 2) * 90; })\n      .font(\"Impact\")\n      .fontSize(function(d) { return d.size; })\n      .on(\"end\", draw)\n      .start();\n\n  function draw(words) {\n    d3.select(\"#cloud\").append(\"svg\")\n        .attr(\"width\", 300)\n        .attr(\"height\", 300)\n      .append(\"g\")\n        .attr(\"transform\", \"translate(150,150)\")\n      .selectAll(\"text\")\n        .data(words)\n      .enter().append(\"text\")\n        .style(\"font-size\", function(d) { return d.size + \"px\"; })\n        .style(\"font-family\", \"Impact\")\n        .style(\"fill\", function(d, i) { return fill(i); })\n        .attr(\"text-anchor\", \"middle\")\n        .attr(\"transform\", function(d) {\n          return \"translate(\" + [d.x, d.y] + \")rotate(\" + d.rotate + \")\";\n        })\n        .text(function(d) { return d.text; });\n  }\n</script>"
+                    "object": "<!-- grab Jason Davies's word cloud layout -->\n<script src=\"https://raw.githubusercontent.com/jasondavies/d3-cloud/master/d3.layout.cloud.js\"></script>\n\n<div id=\"cloud\"></div>\n\n<script>\n  //create a dummy cell to get Python DataFrame into JavaScript\n  var cell = { evaluator: \"IPython\", input: { body: \"counts\" }, output: {} };\n\n  //Use the bkHelper API to evaluate the cell\n  bkHelper.evaluate(cell).then(function(){\n\n      //Grab the DF as a 2D JS array\n      var data = cell.output.result.values;\n    \n      //create a list of maps, as expected by the word cloud layout\n      var wc = [];\n      _.each(data, function(a){\n        wc.push({text: a[0], count: a[1]})\n      })\n\n    var fill = d3.scale.category20();\n    var fontSize = d3.scale.log().range([20, 100]);\n\n    var w = 800;\n    var h = 800;\n\n    d3.layout.cloud()\n        .size([w, h])\n        .words(wc)\n        .rotate(function(d) { return ~~(Math.random() * 5) * 30 - 60; })\n        .font(\"Impact\")\n        .fontSize(function(d) { return fontSize(+d.count); })\n        .on(\"end\", draw)\n        .start();\n\n    function draw(words) {\n      d3.select(\"#cloud\").append(\"svg\")\n          .attr(\"width\", w)\n          .attr(\"height\", h)\n        .append(\"g\")\n          .attr(\"transform\", \"translate(300,300)\")\n        .enter().append(\"text\")\n          .style(\"font-size\", function(d) { return d.size + \"px\"; })\n          .style(\"font-family\", \"Impact\")\n          .style(\"fill\", function(d, i) { return fill(i); })\n          .attr(\"text-anchor\", \"middle\")\n          .attr(\"transform\", function(d) {\n            return \"translate(\" + [d.x, d.y] + \")rotate(\" + d.rotate + \")\";\n          })\n          .text(function(d) { return d.text; });\n    }    \n  })  \n  \n  \n</script>"
                 },
-                "elapsedTime": 51
-            }
-        },
-        {
-            "id": "codesyvQrs",
-            "type": "code",
-            "evaluator": "Html",
-            "input": {
-                "body": "<div id=\"cloud\"></div>\n\n\n<script src=\"https://raw.githubusercontent.com/jasondavies/d3-cloud/master/d3.layout.cloud.js\"></script>\n<script>\n  var fill = d3.scale.category20();\n\n  d3.layout.cloud().size([300, 300])\n      .words([\n        \"Hello\", \"world\", \"normally\", \"you\", \"want\", \"more\", \"words\",\n        \"than\", \"this\"].map(function(d) {\n        return {text: d, size: 10 + Math.random() * 90};\n      }))\n      .padding(5)\n      .rotate(function() { return ~~(Math.random() * 2) * 90; })\n      .font(\"Impact\")\n      .fontSize(function(d) { return d.size; })\n      .on(\"end\", draw)\n      .start();\n\n  function draw(words) {\n    d3.select(\"#cloud\").append(\"svg\")\n        .attr(\"width\", 300)\n        .attr(\"height\", 300)\n      .append(\"g\")\n        .attr(\"transform\", \"translate(150,150)\")\n      .selectAll(\"text\")\n        .data(words)\n      .enter().append(\"text\")\n        .style(\"font-size\", function(d) { return d.size + \"px\"; })\n        .style(\"font-family\", \"Impact\")\n        .style(\"fill\", function(d, i) { return fill(i); })\n        .attr(\"text-anchor\", \"middle\")\n        .attr(\"transform\", function(d) {\n          return \"translate(\" + [d.x, d.y] + \")rotate(\" + d.rotate + \")\";\n        })\n        .text(function(d) { return d.text; });\n  }\n</script>"
-            },
-            "output": {
-                "selectedType": "Hidden"
+                "elapsedTime": 79
             }
         }
     ]
