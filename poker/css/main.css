@@ -1,0 +1,21 @@
+.value-table td{
+    height: 40px;
+    border: 3px solid white;
+    text-align: center;
+}
+
+.value-table {
+    width: 100%;
+}
+
+.value-table td.exclude{
+    background-color: #EEEEEE;
+}
+
+.value-table td.include{
+    background-color: #BBEEBB;
+}
+
+.control-label {
+    text-align: left;
+}
